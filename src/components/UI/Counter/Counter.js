@@ -12,14 +12,16 @@ const Counter = (props) => {
             {
                 (props.amount && props.amount !== 0) ?
                     <>
-                        <button className={classes.Sub}>
+                        <button className={classes.Sub}
+                        onClick={()=>props.onBtnClick(-1)}
+                        >
                             <FontAwesomeIcon icon={faMinus} />
                         </button>
                         <span className={classes.Count}>{props.amount}</span>
                     </>
                     : null
             }
-            <button className={classes.Add}>
+            <button className={classes.Add} onClick={()=>props.onBtnClick(1)}>
 
                 <FontAwesomeIcon icon={faPlus} />
             </button>
